@@ -47,14 +47,15 @@ button {
 }
 
 button:hover {
-	background-color: navy;
+	background-color: orange;
 }
-h2{
-      font-family:'Times New Roman', Times, serif;
-      color: black;
-      font-size: 20px;
-      width: 123px;
-      margin-bottom: 20px;
-      margin-left: 129px;
-      
-   }
+
+h2 {
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	font-size: 20px;
+	width: 200px;
+	position: relative;
+	margin-bottom: -3px;
+	margin-left: 0px;
+}

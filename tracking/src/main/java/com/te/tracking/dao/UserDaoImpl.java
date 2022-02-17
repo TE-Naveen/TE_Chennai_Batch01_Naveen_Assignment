@@ -15,6 +15,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public UserInfo authenticate(Integer id, String password) {
+
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("tracking");
 		EntityManager manager = factory.createEntityManager();
 		UserInfo info = manager.find(UserInfo.class, id);
@@ -23,6 +24,8 @@ public class UserDaoImpl implements UserDao {
 				return info;
 			}
 		}
+		factory.close();
+		manager.close();
 		throw new UserException("Invalid credentials");
 	}// end of authenticate
 
@@ -42,8 +45,20 @@ public class UserDaoImpl implements UserDao {
 		} catch (Exception e) {
 			transaction.rollback();
 			return false;
+		} finally {
+			try {
+				if (factory != null) {
+					factory.close();
+				}
+				if (manager != null) {
+					manager.close();
+				}
+
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
-		
+
 	}
-	
+
 }

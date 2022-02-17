@@ -10,10 +10,9 @@ import com.te.tracking.exception.UserException;
 @ControllerAdvice
 public class UserControllerAdvice {
 	@ExceptionHandler(UserException.class)
-	public String handleEE(UserException exp,HttpServletRequest req) {
-		req.setAttribute("err",exp.getMessage());
+	public String handleEE(UserException exp, HttpServletRequest req) {
+		req.setAttribute("err", exp.getMessage());
 		return "loginform";
 	}
-
 
 }

@@ -18,18 +18,15 @@ public class TicketsServiceImpl implements TicketsService {
 	}
 
 	@Override
-	public Integer book(Integer id,Integer no) {
-		return dao.book(id,no);
-		
+	public Integer book(Integer id, Integer no) {
+		return dao.book(id, no);
+
 	}
 
 	@Override
 	public Integer cancel(Integer id) {
 		return dao.cancel(id);
-		
+
 	}
 
-	
-
-	
 }

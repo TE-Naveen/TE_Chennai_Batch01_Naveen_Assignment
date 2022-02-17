@@ -6,10 +6,8 @@ public interface TicketsDao {
 
 	public Integer seatcheck(Tickets bean);
 
-	public Integer book(Integer id,Integer no);
+	public Integer book(Integer id, Integer no);
 
 	public Integer cancel(Integer id);
-	
-	
-	
+
 }

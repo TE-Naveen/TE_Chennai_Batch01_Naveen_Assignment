@@ -39,13 +39,14 @@ button {
 h1 {
 	text-align: center;
 }
+
 </style>
 </head>
 <body>
 	<div class="welcome">
 		<h1>Welcome to Booking</h1>
-		<a href="./loginform"><button id="one">login</button></a> <a
-			href="./registerform"><button id="two">register</button></a>
+		<a href="./loginform"><button id="one">login</button></a> 
+		<a href="./registerform"><button id="two">register</button></a>
 	</div>
 </body>
 </html>

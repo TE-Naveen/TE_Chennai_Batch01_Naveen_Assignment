@@ -15,9 +15,9 @@ import com.te.tracking.bean.Tickets;
 @Repository
 public class TicketsDaoImpl implements TicketsDao {
 
-	static Tickets beans;
-	static Integer availableSeat;
-	static Integer count = 0;
+	private static Tickets beans;
+	private static Integer availableSeat;
+	private static Integer count = 0;
 
 	@Override
 	public Integer seatcheck(Tickets bean) {
@@ -48,13 +48,21 @@ public class TicketsDaoImpl implements TicketsDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
+		} finally {
+			try {
+				if (factory != null) {
+					factory.close();
+				}
+				if (manager != null) {
+					manager.close();
+				}
+			} catch (Exception e) {
+			}
 		}
 	}
 
 	@Override
 	public Integer book(Integer id, Integer no) {
-		System.out.println(id);
-		System.out.println(no);
 		EntityManagerFactory factory = null;
 		EntityManager manager = null;
 		EntityTransaction transaction = null;
@@ -75,6 +83,7 @@ public class TicketsDaoImpl implements TicketsDao {
 			query2.setParameter("tostate", beans.getToState());
 
 			List<Tickets> tickets = query2.getResultList();
+			System.out.println(tickets.size() + "ticket size");
 
 			if (no <= availableSeat) {
 				count = 0;
@@ -95,6 +104,17 @@ public class TicketsDaoImpl implements TicketsDao {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				if (factory != null) {
+					factory.close();
+				}
+				if (manager != null) {
+					manager.close();
+				}
+			} catch (Exception e) {
+
+			}
 		}
 		return null;
 	}
@@ -140,7 +160,19 @@ public class TicketsDaoImpl implements TicketsDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 
+		} finally {
+			try {
+				if (factory != null) {
+					factory.close();
+				}
+				if (manager != null) {
+					manager.close();
+				}
+			} catch (Exception e) {
+
+			}
 		}
+
 		return null;
 
 	}

@@ -9,11 +9,11 @@ body {
 
 .check {
 	background-color: white;
-	padding: 40px 30px 30px 30px;
+	padding: 6px 30px 30px 30px;
 	position: absolute;
 	border-radius: 10px;
-	top: 29%;
-	left: 30%;
+	top: 26%;
+	left: 34%;
 	width: 400px;
 	margin-left: -25px;
 }

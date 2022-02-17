@@ -14,7 +14,7 @@ import com.te.tracking.service.UserService;
 
 @Controller
 public class UserController {
-	
+
 	@Autowired(required = false)
 	private UserService service;
 
@@ -33,7 +33,7 @@ public class UserController {
 		} else {
 			map.addAttribute("err", "Invalid credentials");
 			return "loginform";
-		} 
+		}
 	}
 
 	@GetMapping("/registerform")
@@ -51,6 +51,5 @@ public class UserController {
 			return "registerform";
 		}
 	}
-	
 
 }

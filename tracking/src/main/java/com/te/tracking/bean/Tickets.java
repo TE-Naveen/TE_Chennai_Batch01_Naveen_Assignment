@@ -6,7 +6,6 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import lombok.Data;
 
@@ -31,23 +30,23 @@ public class Tickets implements Serializable {
 
 	@Column(name = "To_City")
 	private String toCity;
-	
+
 	@Column(name = "From_State")
 	private String fromState;
-	
+
 	@Column(name = "To_State")
 	private String toState;
-	
+
 	@Column(name = "Price")
 	private Double price;
 
 	@Column(name = "Travel_Date")
 	private Date travelDate;
-	
+
 	@Column(name = "Ticket_status")
 	private String ticketStatus;
-	
-	@Column(name="Id")
+
+	@Column(name = "Id")
 	private Integer id;
-	
+
 }

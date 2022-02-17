@@ -26,7 +26,7 @@
             <div class="fromstates">
             <label>From States</label>
                 <select name="fromState" id="fromState" onchange="populate(this.id,'fromCity')">
-                <option value="states">choose states</option>
+                <option value="states" selected="selected" disabled="disabled" >choose states</option>
                 <option value="Tamilnadu">Tamilnadu</option>
                 <option value="kerala">kerala</option>
             </select>
@@ -40,7 +40,7 @@
 		<div class="tostates">
                 <label>To states</label>
                 <select name="toState" id="toState" onchange="populateto(this.id,'toCity')">
-                <option value="states">choose states</option>
+                <option value="states" selected="selected" disabled="disabled">choose states</option>
                 <option value="Tamilnadu">Tamilnadu</option>
                 <option value="kerala">kerala</option>
             </select>

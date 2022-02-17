@@ -5,9 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.te.tracking.bean.UserInfo;
 import com.te.tracking.dao.UserDao;
+
 @Service
-public class UserServiceImpl implements UserService{
-	
+public class UserServiceImpl implements UserService {
+
 	@Autowired(required = false)
 	private UserDao dao;
 
@@ -17,7 +18,7 @@ public class UserServiceImpl implements UserService{
 			return null;
 		}
 		return dao.authenticate(id, password);
-		
+
 	}
 
 	@Override
